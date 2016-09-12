@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belajar Vue | Vue If</title>
+	<script type="text/javascript" src="assets/js/vue.min.js"></script>
+</head>
+<body>
+<div id="BelajarIf">
+	<p v-if="nama == 'dias'">Nama Saya Dias</p>
+	<p v-else>Nama Saya Bukan Dias</p>
+</div>
+
+<script type="text/javascript">
+	vue = new Vue
+	({
+		el: '#BelajarIf',
+		data: 
+		{
+			nama: 'dias',
+		}
+	});
+</script>
+</body>
+</html>

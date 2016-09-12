@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belajar Vue</title>
+	<script src="assets/js/vue.min.js"></script>
+</head>
+<body>
+<div id="BelajarVue">
+<input type="text" v-model="hai"> {{ hai }}
+
+<pre>{{ $data | json }}</pre>
+</div>
+
+<script type="text/javascript">
+	obj = new Vue 
+	({
+		el : '#BelajarVue',
+		data : 
+		{
+			hai : 'Halo dunia!'
+		}
+	});
+</script>
+</body>
+</html>

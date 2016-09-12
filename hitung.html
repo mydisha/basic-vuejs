@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belajar Vue | Hitung</title>
+	<script type="text/javascript" src="assets/js/vue.min.js" ></script>
+</head>
+<body>
+<div id="BelajarHitung">
+	<input type="text" v-model="hitung">
+	<h2>Nilai kamu : {{ nilai }}</h2>
+</div>
+
+<script type="text/javascript">
+	vue = new Vue
+	({
+		el: '#BelajarHitung',
+		data : 
+		{
+			hitung : null,
+		},
+
+		computed : 
+		{
+			nilai : function() 
+			{
+				if (this.hitung >= 1 && this.hitung <= 10) 
+				{
+					return 'C';
+				} else if (this.hitung >= 10 && this.hitung < 40)
+				{
+					return 'B';
+				} else if (this.hitung >= 40)
+				{
+					return 'A';
+				} else 
+				{
+					return null;
+				}
+			}
+		}
+	});
+</script>
+</body>
+</html>

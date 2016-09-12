@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belajar Vue | Event Handling</title>
+	<script type="text/javascript" src="assets/js/vue.min.js"></script>
+</head>
+<body>
+<div id="BelajarEvent">
+	<button type="submit" v-on:click="increment">Tambah</button>
+	<p>Total nilai : {{ hitung }}</p>
+</div>
+
+<script type="text/javascript">
+	vue = new Vue
+	({
+		el: '#BelajarEvent',
+		data: 
+		{
+			hitung: 0
+		},
+
+		methods:
+		{
+			increment:function()
+			{
+				if(this.hitung < 10)
+				{
+					this.hitung += 1
+				} else 
+				{
+					this.hitung = 'Maksimal'
+				}
+			}
+		}
+
+	});
+</script>
+</body>
+</html>

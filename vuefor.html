@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belajar Vue | VueFor</title>
+	<script type="text/javascript" src="assets/js/vue.min.js"></script>
+</head>
+<body>
+<div id="BelajarVueFor">
+	<li v-for="list in lists">{{ list }}</li>
+</div>
+
+<script type="text/javascript">
+	vue = new Vue
+	({
+		el: '#BelajarVueFor',
+		data: 
+		{
+			lists: ['Belajar html', 'Belajar Css', 'Belajar Javascript', 'Belajar PHP', 'Belajar Ruby', 'Belajar Server Management']
+		},
+	});
+</script>
+</body>
+</html>

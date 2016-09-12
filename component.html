@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belajar Vue | Component</title>
+	<script type="text/javascript" src="assets/js/vue.min.js"></script>
+</head>
+<body>
+<div id="BelajarComponent">
+	<custom1></custom1>
+</div>
+
+<script type="text/javascript">
+	Vue.component('custom1', {
+		template: '<i>Render custom component vue</i>'
+	});
+
+	new Vue
+	({
+		el: '#BelajarComponent'
+	})
+</script>
+</body>
+</html>

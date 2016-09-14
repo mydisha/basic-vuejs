@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="assets/js/vue.min.js"></script>
+</head>
+<body>
+<div class="todo-list">
+	<p v-if="!items.length">Tidak ada item</p>
+	<ul v-if="items.length">
+		<li v-for="item in items">{{ item.name }} - <a href="#" v-on:click="remove(item)">Remove</a></li>
+	</ul>
+	<input type="text" v-model="item">
+	<input type="submit" value="Add Item" v-on:click="add">
+</div>
+
+<script type="text/javascript">
+	new Vue({
+		el: '.todo-list',
+		data: {
+			item : '',
+			items : [],
+		},
+
+		methods: {
+			add: function() {
+				var item = {
+					id: Date.now(),
+					name: this.item
+				};
+
+				this.items.push(item);
+				this.item = '';
+			},
+
+			remove: function(item) {
+				var newItem = this.items.filter(function(i){
+					return item.id !== i.id;
+				});
+
+				this.items = newItem;
+			}
+		}
+	});
+</script>
+</body>
+</html>

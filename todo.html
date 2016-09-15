@@ -3,6 +3,7 @@
 <head>
 	<title></title>
 	<script type="text/javascript" src="assets/js/vue.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 </head>
 <body>
 <div class="todo-list">
@@ -31,7 +32,17 @@
 
 				this.items.push(item);
 
-				localStorage.setItem('todolist', JSON.stringify(this.items));
+				// Di ganti menggunakan database
+				// localStorage.setItem('todolist', JSON.stringify(this.items));
+
+				$.ajax({
+					url: 'todoapi.php',
+					type: 'POST',
+					cache: false,
+					data: {
+						name: this.item
+					}
+				});
 
 				this.item = '';
 			},

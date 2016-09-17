@@ -54,12 +54,24 @@
 
 				this.items = newItem;
 
-				localStorage.setItem('todolist', JSON.stringify(this.items));
+				// Diganti dengan API
+
+				// localStorage.setItem('todolist', JSON.stringify(this.items));
 			}
 		},
 
 		ready: function() {
-			this.items = JSON.parse(localStorage.getItem('todolist')) || [];
+			$.ajax({
+				url: 'todoapi.php',
+				type: 'GET',
+				cache: false,
+				success: function(data) {
+					this.items = data;
+				}.bind(this)
+			});
+			// }).success(function(data){
+			// 	console.log('masuk');
+			// }.bind(this));
 		}
 	});
 </script>

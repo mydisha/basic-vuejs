@@ -28,7 +28,7 @@ if ($method == 'post') {
 
 } else {
 
-	$get = $conn->query("SELECT id, name from todo");
+	$get = $conn->query("SELECT * from todo");
 	if ($get->rowCount() == 0)
 	{
 		echo json_encode([]);

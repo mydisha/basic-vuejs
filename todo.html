@@ -26,14 +26,10 @@
 		methods: {
 			add: function() {
 				var item = {
-					id: Date.now(),
 					name: this.item
 				};
 
 				this.items.push(item);
-
-				// Di ganti menggunakan database
-				// localStorage.setItem('todolist', JSON.stringify(this.items));
 
 				$.ajax({
 					url: 'todoapi.php',
@@ -54,9 +50,14 @@
 
 				this.items = newItem;
 
-				// Diganti dengan API
-
-				// localStorage.setItem('todolist', JSON.stringify(this.items));
+				$.ajax({
+					url: 'todoapi.php',
+					type: 'DELETE',
+					cache: false,
+					data: {
+						id: item.id
+					}
+				})
 			}
 		},
 
@@ -69,9 +70,6 @@
 					this.items = data;
 				}.bind(this)
 			});
-			// }).success(function(data){
-			// 	console.log('masuk');
-			// }.bind(this));
 		}
 	});
 </script>

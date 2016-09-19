@@ -3,9 +3,9 @@
 header('Content-Type: application/json');
 
 $host = 'localhost';
-$dbname = 'todo';
-$dbuser = 'root';
-$dbpass = '55656354';
+$dbname = '';
+$dbuser = '';
+$dbpass = '';
 
 $conn = new PDO('mysql:host='. $host .';dbname='. $dbname, $dbuser, $dbpass);
 
